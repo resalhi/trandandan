@@ -34,7 +34,6 @@ const useUserStore = create<UserStore>(
         getUser: async () => {
           // const storedUser = localStorage.getItem("user-store");
           // if (storedUser)
-
           try {
             const newUser = await fetchLoggedUser();
             set({ user: newUser });
@@ -47,7 +46,7 @@ const useUserStore = create<UserStore>(
     ),
     {
       name: "user-store",
-      storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
+      storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
     }
   )
 );

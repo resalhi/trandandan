@@ -7,10 +7,9 @@ import '../globals.css';
 const socket:Socket = io("http://localhost:3001");
 
 const PongGame: React.FC = () => {
-
-  const currentuser = JSON.parse(window.localStorage.getItem("user-store"));
-  const user = currentuser.user;
-  console.log(`hahowa l user: ${user}`);
+  const currentuser = JSON.parse(sessionStorage.getItem("user-store"));
+  const user = currentuser.state.user
+  console.log(currentuser.state.user);
   const cvsRef = useRef<HTMLCanvasElement | null>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const [players, setStr2] = useState<any>({
@@ -77,7 +76,7 @@ const PongGame: React.FC = () => {
       }
     };
     if (string != "you can play"){
-      socket.emit('AddUserToRoom');
+      socket.emit('AddUserToRoom', user);
       const queuehundler = (str: string) => {
         setstr(str);
       }

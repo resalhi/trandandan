@@ -17,6 +17,7 @@ import * as bcrypt from 'bcrypt';
 import { channel } from 'diagnostics_channel';
 import  GameQueue  from '../game/gamequeue';
 import  GameRoom  from '../game/gameroom';
+import { User } from '@prisma/client';
 
 @WebSocketGateway({
   cors: {
@@ -38,14 +39,14 @@ export class ChatGateway implements OnGatewayDisconnect{
     private readonly notificationService: notificationService,
     ) {
       this.queue = new GameQueue();
-      this.room = new GameRoom();
+      this.room = new GameRoom(prisma);
      }
     
     
     
     @SubscribeMessage('AddUserToRoom')
-    handlequeue(client: Socket): void {
-      const match = this.queue.addPlayerToQueue(client);
+    handlequeue(client: Socket, user: User): void {
+      const match = this.queue.addPlayerToQueue(client, user);
       if (match){
         this.queue.emptyplayers();
         this.room.startgame(match);
@@ -58,6 +59,7 @@ export class ChatGateway implements OnGatewayDisconnect{
     }
     
     handleDisconnect(clinet: Socket){
+      console.log("hereeeeee\n");
       this.queue.userquit(clinet);
       this.room.userdisconnect(clinet);
     }

@@ -1,7 +1,14 @@
+import { User } from '@prisma/client';
 import { Socket } from 'socket.io';
+
+export type Player = {
+  socket: Socket;
+  user: User;
+};
 
 export type userdata = {
     socket: Socket;
+    userdata: User;
     score: number;
     x: number;
     y: number;
