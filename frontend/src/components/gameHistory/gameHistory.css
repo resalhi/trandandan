@@ -1,0 +1,21 @@
+#gameHistory {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    /* background-color: aqua; */
+    padding: 2rem 0;
+}
+
+.gameHistory-items {
+    padding: 2rem;
+}
+
+.section-title {
+    color: #FFF;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 2rem 0;
+}

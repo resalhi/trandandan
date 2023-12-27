@@ -1,0 +1,25 @@
+.chat-container{
+    height: 810px;
+}
+
+.chat-content{
+    background-color: #141627;
+}
+
+.list-div{
+    background-color: #141627;
+}
+
+.admin-div{
+    background-color: #141627;
+}
+
+@media screen and (max-width: 1535px){
+    .admin-div{
+        display: none;
+    }
+
+    .list-div{
+        width: 35%;
+    }
+}

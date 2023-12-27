@@ -1,0 +1,30 @@
+.chat-container{
+    height: 85vh;
+    width: 88vw;
+    overflow: hidden;
+    position: fixed;
+}
+
+.chat-content{
+    background-color: #141627;
+    margin-right: 2rem;
+    /* margin-left: 6rem; */
+}
+
+.list-div{
+    background-color: #141627;
+}
+
+.admin-div{
+    background-color: #141627;
+}
+
+@media screen and (max-width: 1535px){
+    .admin-div{
+        display: none;
+    }
+
+    .list-div{
+        width: 35%;
+    }
+}

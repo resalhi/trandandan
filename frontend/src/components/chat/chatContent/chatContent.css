@@ -1,0 +1,60 @@
+
+.chat-content {
+   min-width: 40%;
+   max-width: 60%;
+   display: flex;
+   flex-direction: column;
+   flex: 1;
+   overflow-y: auto;
+}
+.list-div{
+   min-width: 20% !important;
+   max-width: 30% !important;
+   /* // fix width for mobile */
+}
+
+@media   (max-width: 1838px) {
+   .list-div{
+      min-width: 30% !important;
+      max-width: 30% !important;
+   }
+
+}
+
+@media   (max-width: 3000px) {
+   .sidemodelAM{
+         display: none;
+   }
+}
+
+@media   (max-width: 1654px) {
+   .sidemodelAM{
+         display: block;
+   }
+   .chat-content{
+      margin-right: 2rem;
+   }
+}
+
+@media   (max-width: 1530px) {
+      .chat-content{
+         margin-right: 10rem;
+      }
+   }
+   
+@media   (max-width: 1300px) {
+      .chat-content{
+         margin-right: 12rem;
+      }
+   }
+   
+   @media   (max-width: 1020px) {
+      .chat-content{
+         margin-right: 14rem;
+      }
+   }
+   @media   (max-width: 638px) {
+      .chat-content{
+         margin-right: 0;
+      }
+   }
